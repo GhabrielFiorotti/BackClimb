@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 require('dotenv/config');
 
-const sequelize = new Sequelize("climb_app", "climb_app", "n4*vl5cPo_", {
-    host: "climb_app.mysql.dbaas.com.br",
+const sequelize = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PWD, {
+    host: process.env.HOST,
     dialect: 'mysql',
     define: {
         timestamps: false
