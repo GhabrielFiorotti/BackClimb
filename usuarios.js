@@ -37,7 +37,9 @@ router.post('/cadastro', (req, res) => {
     });
 });
 
-
+router.get('/teste', (req, res) => {
+    return res.json({teste: "isso"});
+});
 
 router.post('/login', async (req, res) => {
     try {
