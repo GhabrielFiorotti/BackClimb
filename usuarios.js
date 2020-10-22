@@ -32,6 +32,7 @@ router.post('/cadastro', (req, res) => {
                 return res.json(response, 201);
             }
         } catch (error) {
+            console.log(error);
             return res.json({ Mensagem: "Erro ao inserir no banco" }, error, 400);
         }
     });
