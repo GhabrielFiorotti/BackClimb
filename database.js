@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 require('dotenv/config');
 
-const sequelize = new Sequelize('mysql://climb_app:n4*vl5cPo_@climb_app.mysql.dbaas.com.br/climb_app',{
+const sequelize = new Sequelize(process.env.DATABASE_URL,{
     define: {
         timestamps: false
     }
