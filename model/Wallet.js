@@ -1,7 +1,7 @@
 const database = require('../database.js');
 
 
-const users = database.sequelize.define('users', {
+const wallets = database.sequelize.define('wallets', {
     user_id : {type: database.Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
     name : {type : database.Sequelize.STRING(50), allowNull : false},
     tel : {type : database.Sequelize.STRING(20), allowNull : false},
@@ -12,7 +12,7 @@ const users = database.sequelize.define('users', {
 }); 
 
 
-console.log("RODANDO usuario")
-users.sync({force: false});
-module.exports = users;
+console.log("RODANDO wallets");
+wallets.sync({force: false});
+module.exports = wallets
 
