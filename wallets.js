@@ -9,7 +9,7 @@ require('dotenv/config');
 router.post('/cadastro', async (req, res) => {
     try {
         const resposta = await Wallets.create({
-            user_id: user_id,
+            user_id: req.body.user_id,
             name: req.body.name,
             description: req.body.description
         });
