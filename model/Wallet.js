@@ -7,7 +7,7 @@ const wallets = database.sequelize.define('wallets', {
         type: database.Sequelize.INTEGER,
         allowNull : false,
         references: {
-            model: Users,
+            model: users,
             key: 'user_id'
         }
     },
