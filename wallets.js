@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv/config');
 
 
-router.post('/cadastro', (req, res) => {
+router.post('/cadastro', async (req, res) => {
     try {
         const resposta = await Wallets.create({
             user_id: user_id,
