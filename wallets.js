@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const Wallets = require('./model/Wallets.js');
+const Wallets = require('./model/Wallet.js');
 const jwt = require('jsonwebtoken');
 require('dotenv/config');
 
