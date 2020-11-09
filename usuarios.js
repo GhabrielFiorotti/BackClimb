@@ -38,9 +38,6 @@ router.post('/cadastro', (req, res) => {
     });
 });
 
-router.get('/teste', (req, res) => {
-    return res.json({teste: process.env.TESTE});
-});
 
 router.post('/login', async (req, res) => {
     try {
