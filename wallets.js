@@ -11,7 +11,7 @@ router.post('/cadastro', (req, res) => {
         const resposta = await Wallets.create({
             user_id: user_id,
             name: req.body.name,
-            description: req.body.description,
+            description: req.body.description
         });
         if (resposta) {
             const response = {
