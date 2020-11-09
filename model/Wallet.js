@@ -3,7 +3,14 @@ const database = require('../database.js');
 
 const wallets = database.sequelize.define('wallets', {
     wallet_id : {type: database.Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-    user_id : {type: database.Sequelize.INTEGER, allowNull : false},
+    user_id: {
+        type: database.Sequelize.INTEGER,
+        allowNull : false,
+        references: {
+            model: Users,
+            key: 'user_id'
+        }
+    },
     name : {type : database.Sequelize.STRING(30)},
     description : {type : database.Sequelize.STRING(100)}
 }); 
