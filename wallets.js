@@ -49,7 +49,7 @@ router.patch('/update/:id', async (req, res) => {
             return res.json(response, 201);
         }
     } catch (error) {
-        return res.json({ Mensagem: "Erro ao atualizar no banco" }, 400);
+        return res.json({ Mensagem: "Erro ao atualizar no banco" },error, 400);
     }
 });
 
@@ -64,7 +64,7 @@ router.delete('/delete/:id', async (req, res) => {
         return res.json({ Mensagem: "Carteira deletada com sucesso" }, 200)
     }
     catch (error) {
-        return res.json({ Mensagem: "Erro ao deletar Usuário" }, 400);
+        return res.json({ Mensagem: "Erro ao deletar Carteira" },error, 400);
     }
 });
 
