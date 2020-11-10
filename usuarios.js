@@ -63,7 +63,7 @@ router.post('/login', async (req, res) => {
                         name : _name, 
                         profile : _profile
                     },
-                        "Nu532iDBK##z^NoC#fcV*6X3$gon1gYAp8S#t",
+                        process.env.JWD_KEY,
                         {
                             expiresIn: "1h"
                         }
