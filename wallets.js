@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const Wallets = require('./model/Wallet.js');
+const Wallet = require('./model/Wallet.js');
 const jwt = require('jsonwebtoken');
 require('dotenv/config');
 
 
 router.post('/cadastro', async (req, res) => {
     try {
-        const resposta = await Wallets.create({
+        const resposta = await Wallet.create({
             user_id: req.body.user_id,
             name: req.body.name,
             description: req.body.description
@@ -30,7 +30,7 @@ router.post('/cadastro', async (req, res) => {
 
 router.patch('/update/:id', async (req, res) => {
     try {
-        const resposta = await wallets.update({
+        const resposta = await Wallet.update({
             name: req.body.name,
             description: req.body.description
         }, {
@@ -56,7 +56,7 @@ router.patch('/update/:id', async (req, res) => {
 
 router.delete('/delete/:id', async (req, res) => {
     try {
-        await wallets.destroy({
+        await Wallet.destroy({
             where: {
                 wallet_id: req.params.id
             }
