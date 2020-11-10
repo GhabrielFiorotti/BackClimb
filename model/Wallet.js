@@ -6,7 +6,7 @@ const wallets = database.sequelize.define('wallets', {
     user_id: {type: database.Sequelize.INTEGER, allowNull : false},
     name : {type : database.Sequelize.STRING(30)},
     description : {type : database.Sequelize.STRING(100)}
-); 
+}); 
 
 
 console.log("RODANDO wallets");
