@@ -59,17 +59,16 @@ router.post('/login', async (req, res) => {
                 
                 if (result) {
                     const token = jwt.sign({
-                        user_id: _id,
-                        name: _name,
-                        email: _email
+                        id : _id, 
+                        name : _name, 
+                        profile : _profile
                     },
                         "Nu532iDBK##z^NoC#fcV*6X3$gon1gYAp8S#t",
                         {
                             expiresIn: "1h"
                         }
                     );
-                    return res.json({ mensagem: "Autenticado com sucesso", token: token, id : _id, name : _name, 
-                    email : _email, cpf_cnpj : _cpf_cnpj, tel : _tel, profile : _profile }, 200);
+                    return res.json({ mensagem: "Autenticado com sucesso", token: token}, 200);
                 }
                 return res.json({ mensagem: "Falha na autenticação" }, 401);
 
