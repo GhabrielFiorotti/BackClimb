@@ -35,7 +35,7 @@ router.patch('/update/:id', async (req, res) => {
             description: req.body.description
         }, {
             where: {
-                user_id: req.params.id
+                wallet_id: req.params.id
             }
         });
         if (resposta) {
@@ -58,7 +58,7 @@ router.delete('/delete/:id', async (req, res) => {
     try {
         await wallets.destroy({
             where: {
-                user_id: req.params.id
+                wallet_id: req.params.id
             }
         })
         return res.json({ Mensagem: "Carteira deletada com sucesso" }, 200)
